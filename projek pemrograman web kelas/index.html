@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PULSEFIT — Elevate Your Fitness</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              400: '#a3e635', // Electric Lime
+              500: '#84cc16',
+              glow: 'rgba(163, 230, 53, 0.25)'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-brand-400 selection:text-zinc-950">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-black tracking-wider text-white flex items-center gap-2">
+        <span class="w-8 h-8 bg-brand-400 text-zinc-950 rounded-lg flex items-center justify-center font-extrabold text-lg">P</span>
+        PULSE<span class="text-brand-400">FIT</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#home" class="hover:text-brand-400 transition-colors">Beranda</a>
+        <a href="#features" class="hover:text-brand-400 transition-colors">Fasilitas</a>
+        <a href="#programs" class="hover:text-brand-400 transition-colors">Program</a>
+        <a href="#calculator" class="hover:text-brand-400 transition-colors">Kalkulator BMI</a>
+        <a href="#trainers" class="hover:text-brand-400 transition-colors">Trainer</a>
+        <a href="#pricing" class="hover:text-brand-400 transition-colors">Harga</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#pricing" class="bg-brand-400 text-zinc-950 font-bold text-sm px-6 py-2.5 rounded-full hover:bg-brand-500 hover:shadow-[0_0_20px_rgba(163,230,53,0.4)] transition-all">
+          Gabung Member
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-zinc-300 hover:text-white focus:outline-none">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-b border-zinc-800 px-6 py-6 space-y-4">
+      <a href="#home" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Beranda</a>
+      <a href="#features" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Fasilitas</a>
+      <a href="#programs" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Program</a>
+      <a href="#calculator" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Kalkulator BMI</a>
+      <a href="#trainers" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Trainer</a>
+      <a href="#pricing" class="block text-zinc-300 hover:text-brand-400 py-1 font-medium">Harga</a>
+      <a href="#pricing" class="block text-center bg-brand-400 text-zinc-950 font-bold text-sm py-3 rounded-full mt-4">
+        Gabung Member
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <!-- Ambient Glow Background -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Column: Content -->
+      <div class="space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-full px-4 py-1.5 text-xs font-semibold text-brand-400">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+          #1 Premium Fitness Center & Community
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1]">
+          TRANSFORMASI <br class="hidden sm:inline" />
+          TUBUHMU, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-400">TANPA BATAS.</span>
+        </h1>
+
+        <p class="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Raih bentuk tubuh ideal dengan program latihan terstruktur, alat kelas dunia, dan bimbingan langsung dari personal trainer berpengalaman.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a href="#pricing" class="w-full sm:w-auto bg-brand-400 text-zinc-950 font-extrabold px-8 py-4 rounded-full hover:bg-brand-500 hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all text-center">
+            Mulai Trial 7 Hari Gratis
+          </a>
+          <a href="#programs" class="w-full sm:w-auto border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+            <i data-lucide="play-circle" class="w-5 h-5"></i> Lihat Program
+          </a>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="pt-10 grid grid-cols-3 gap-4 border-t border-zinc-800/80">
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white">1,500+</p>
+            <p class="text-xs text-zinc-500 font-medium mt-1">Member Aktif</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white">25+</p>
+            <p class="text-xs text-zinc-500 font-medium mt-1">Expert Coach</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white">99%</p>
+            <p class="text-xs text-zinc-500 font-medium mt-1">Tingkat Kepuasan</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Image with Floating Card -->
+      <div class="relative flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-md lg:max-w-none">
+          <!-- Main Hero Image -->
+          <div class="relative z-10 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Fitness Model" class="w-full h-[480px] object-cover object-center filter brightness-90 hover:scale-105 transition-transform duration-700">
+          </div>
+
+          <!-- Floating Badge 1 (Calorie Counter) -->
+          <div class="absolute -top-6 -left-6 z-20 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-xl flex items-center gap-3">
+            <div class="w-12 h-12 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center">
+              <i data-lucide="flame" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-400 font-medium">Kalori Terbakar</p>
+              <p class="text-lg font-bold text-white">750 <span class="text-xs text-zinc-400 font-normal">kcal/sesi</span></p>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 (Heart Rate) -->
+          <div class="absolute -bottom-6 -right-6 z-20 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-xl flex items-center gap-3">
+            <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-xl flex items-center justify-center">
+              <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-400 font-medium">Detak Jantung Ideal</p>
+              <p class="text-lg font-bold text-white">135 <span class="text-xs text-zinc-400 font-normal">BPM</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / WHY CHOOSE US -->
+  <section id="features" class="py-20 bg-zinc-900/50 border-y border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">Keunggulan Kami</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold">Mengapa Memilih PULSEFIT?</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl hover:border-brand-400/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-400/10 text-brand-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="dumbbell" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Peralatan Standar Olimpiade</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Dilengkapi dengan mesin cardio, power rack, dan beban bebas kualitas tertinggi untuk kenyamanan latihan maksimal.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl hover:border-brand-400/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-400/10 text-brand-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="user-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Personal Trainer Berlisensi</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Didampingi instruktur internasional yang akan menyusun jadwal latihan dan pola makan sesuai target tubuhmu.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl hover:border-brand-400/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-400/10 text-brand-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="clock" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Akses 24/7 Fleksibel</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Bebas latihan kapan saja sesuai dengan waktu senggangmu tanpa batasan jam operasional yang membingungkan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKOUT PROGRAMS (WITH JS FILTER) -->
+  <section id="programs" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h2 class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">Program Latihan</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold">Pilih Kelas Sesuai Goal-mu</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="filter-container">
+          <button class="filter-btn active bg-brand-400 text-zinc-950 px-5 py-2 rounded-full text-xs font-bold transition-all" data-category="all">Semua</button>
+          <button class="filter-btn bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-5 py-2 rounded-full text-xs font-bold transition-all" data-category="strength">Strength</button>
+          <button class="filter-btn bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-5 py-2 rounded-full text-xs font-bold transition-all" data-category="cardio">Cardio</button>
+          <button class="filter-btn bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 px-5 py-2 rounded-full text-xs font-bold transition-all" data-category="yoga">Yoga & Flexibility</button>
+        </div>
+      </div>
+
+      <!-- Programs Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="program-grid">
+        <!-- Dynamic Content Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BMI CALCULATOR -->
+  <section id="calculator" class="py-20 bg-zinc-900/40 border-y border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">Hitung Kebutuhan Tubuh</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold mb-4">Kalkulator Body Mass Index (BMI)</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          Ketahui status berat badanmu secara akurat untuk menentukan program latihan yang paling efektif.
+        </p>
+        
+        <!-- Calculator Form -->
+        <form id="bmi-form" class="space-y-4 max-w-md">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-zinc-400 font-medium mb-2">Tinggi Badan (cm)</label>
+              <input type="number" id="height" placeholder="Contoh: 170" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+            </div>
+            <div>
+              <label class="block text-xs text-zinc-400 font-medium mb-2">Berat Badan (kg)</label>
+              <input type="number" id="weight" placeholder="Contoh: 65" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-brand-400 text-zinc-950 font-bold py-3.5 rounded-xl hover:bg-brand-500 transition-all text-sm">
+            Hitung Skor BMI
+          </button>
+        </form>
+      </div>
+
+      <!-- Result Card -->
+      <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl text-center flex flex-col items-center justify-center min-h-[280px]">
+        <p class="text-xs text-zinc-500 uppercase tracking-widest font-semibold mb-2">Hasil Analisis BMI</p>
+        <div id="bmi-value" class="text-5xl font-black text-brand-400 my-2">--.-</div>
+        <p id="bmi-status" class="text-lg font-bold text-zinc-300">Masukkan tinggi & berat badan Anda</p>
+        <p id="bmi-advice" class="text-xs text-zinc-500 mt-2 max-w-xs">Skor BMI normal berkisar antara 18.5 hingga 24.9.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS SECTION -->
+  <section id="trainers" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">Tim Profesional</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold">Instruktur Terbaik Kami</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Trainer 1 -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-brand-400/50 transition-all">
+          <div class="h-80 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=600&q=80" alt="Trainer Alex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Alex Pratama</h3>
+            <p class="text-xs text-brand-400 font-semibold mb-3">Head Bodybuilding Coach</p>
+            <p class="text-zinc-400 text-xs">Spesialis hypertrophy, pembentukan massa otot, dan konsultasi nutrisi atlet.</p>
+          </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-brand-400/50 transition-all">
+          <div class="h-80 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=600&q=80" alt="Trainer Sarah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Sarah Wijaya</h3>
+            <p class="text-xs text-brand-400 font-semibold mb-3">HIIT & Cardio Specialist</p>
+            <p class="text-zinc-400 text-xs">Pakar penurun berat badan, pembakaran lemak cepat, dan endurance training.</p>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-brand-400/50 transition-all">
+          <div class="h-80 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Trainer David" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">David Santos</h3>
+            <p class="text-xs text-brand-400 font-semibold mb-3">CrossFit & Mobility Master</p>
+            <p class="text-zinc-400 text-xs">Berfokus pada fleksibilitas sendi, kekuatan fungsional, dan stamina tinggi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="py-24 bg-zinc-900/30 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-3">Paket Keanggotaan</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold">Pilih Paket Sesuai Kebutuhan</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Basic Plan -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-zinc-300">Starter Pass</h3>
+            <div class="my-4">
+              <span class="text-4xl font-black text-white">Rp 299rb</span>
+              <span class="text-zinc-500 text-xs">/ bulan</span>
+            </div>
+            <ul class="space-y-3 text-xs text-zinc-400 my-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Akses Gym jam 08:00 - 17:00</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Locker & Shower room</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Free konsultasi awal</li>
+              <li class="flex items-center gap-2 text-zinc-600"><i data-lucide="x" class="w-4 h-4"></i> Akses Kelas Group</li>
+            </ul>
+          </div>
+          <button class="w-full border border-zinc-700 hover:border-brand-400 hover:text-brand-400 font-bold py-3 rounded-full transition-all text-xs">
+            Pilih Starter
+          </button>
+        </div>
+
+        <!-- Pro Plan (Highlighted) -->
+        <div class="bg-zinc-900 border-2 border-brand-400 p-8 rounded-3xl flex flex-col justify-between relative shadow-[0_0_30px_rgba(163,230,53,0.15)]">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-400 text-zinc-950 text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider">Paling Populer</span>
+          <div>
+            <h3 class="text-lg font-bold text-white">Pro Fitness Pass</h3>
+            <div class="my-4">
+              <span class="text-4xl font-black text-white">Rp 499rb</span>
+              <span class="text-zinc-500 text-xs">/ bulan</span>
+            </div>
+            <ul class="space-y-3 text-xs text-zinc-300 my-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Akses Gym 24/7 Tanpa Batas</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Bebas Akses Semua Kelas Group</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> 2x Sesi Personal Trainer / bulan</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Sauna & Recovery Room</li>
+            </ul>
+          </div>
+          <button class="w-full bg-brand-400 text-zinc-950 font-extrabold py-3 rounded-full hover:bg-brand-500 transition-all text-xs shadow-lg">
+            Pilih Pro Pass
+          </button>
+        </div>
+
+        <!-- VIP Plan -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-zinc-300">Elite VIP Member</h3>
+            <div class="my-4">
+              <span class="text-4xl font-black text-white">Rp 899rb</span>
+              <span class="text-zinc-500 text-xs">/ bulan</span>
+            </div>
+            <ul class="space-y-3 text-xs text-zinc-400 my-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Semua Fasilitas Pro Pass</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Unlimited Personal Trainer</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Meal Plan & Nutrisi Khusus</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Towel & Merchandise Gratis</li>
+            </ul>
+          </div>
+          <button class="w-full border border-zinc-700 hover:border-brand-400 hover:text-brand-400 font-bold py-3 rounded-full transition-all text-xs">
+            Pilih Elite VIP
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 border-t border-zinc-800/80 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <a href="#" class="text-xl font-black tracking-wider text-white">
+          PULSE<span class="text-brand-400">FIT</span>
+        </a>
+        <p class="text-xs text-zinc-500 leading-relaxed">
+          Pusat kebugaran modern berstandar internasional untuk membantumu mencapai versi terbaik dari dirimu.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4">Navigasi</h4>
+        <ul class="space-y-2 text-xs text-zinc-400">
+          <li><a href="#home" class="hover:text-brand-400">Beranda</a></li>
+          <li><a href="#features" class="hover:text-brand-400">Fasilitas</a></li>
+          <li><a href="#programs" class="hover:text-brand-400">Program Latihan</a></li>
+          <li><a href="#pricing" class="hover:text-brand-400">Harga Membership</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4">Jam Operasional</h4>
+        <p class="text-xs text-zinc-400">Senin - Jumat: 06:00 - 23:00</p>
+        <p class="text-xs text-zinc-400 mt-1">Sabtu - Minggu: 07:00 - 21:00</p>
+        <p class="text-xs text-brand-400 mt-2 font-medium">Member Pro/VIP: Akses 24 Jam</p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4">Newsletter</h4>
+        <p class="text-xs text-zinc-500 mb-3">Dapatkan tips workout gratis setiap minggu.</p>
+        <div class="flex gap-2">
+          <input type="email" placeholder="Email kamu" class="bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-400 w-full">
+          <button class="bg-brand-400 text-zinc-950 font-bold px-4 rounded-xl text-xs hover:bg-brand-500">Kirim</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-zinc-800/60 text-center text-xs text-zinc-600">
+      &copy; 2026 PULSEFIT Inc. All rights reserved. Designed for Frontend Showcase.
+    </div>
+  </footer>
+
+  <!-- ALL LOGIC INLINE SCRIPT FOR ONE-FILE SIMPLE USE -->
+  <script>
+    // --- Mock Data Programs ---
+    const mockPrograms = [
+      {
+        id: 1,
+        title: "Bodybuilding & Muscle Gain",
+        category: "strength",
+        duration: "60 Menit",
+        trainer: "Alex Pratama",
+        level: "Intermediate",
+        image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80",
+        description: "Fokus pada pembentukan hipertrofi otot dengan beban bertahap."
+      },
+      {
+        id: 2,
+        title: "High Intensity Fat Burn",
+        category: "cardio",
+        duration: "45 Menit",
+        trainer: "Sarah Wijaya",
+        level: "Semua Tingkat",
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80",
+        description: "Kombinasi gerakan cepat untuk membakar hingga 800 kalori per sesi."
+      },
+      {
+        id: 3,
+        title: "Vinyasa Flow & Flexibility",
+        category: "yoga",
+        duration: "50 Menit",
+        trainer: "David Santos",
+        level: "Pemula",
+        image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80",
+        description: "Meningkatkan kelenturan tubuh, postur, dan ketenangan pikiran."
+      },
+      {
+        id: 4,
+        title: "Powerlifting Heavy Duty",
+        category: "strength",
+        duration: "75 Menit",
+        trainer: "Alex Pratama",
+        level: "Advanced",
+        image: "https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&w=600&q=80",
+        description: "Latihan gerakan compound utama: Squat, Bench Press, dan Deadlift."
+      },
+      {
+        id: 5,
+        title: "CrossFit Functional Circuit",
+        category: "cardio",
+        duration: "50 Menit",
+        trainer: "David Santos",
+        level: "Intermediate",
+        image: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=600&q=80",
+        description: "Sirkuit latihan beban tubuh dan kettlebell untuk stamina super."
+      }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // 1. Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // 2. Render & Filter Program Latihan
+      const programGrid = document.getElementById("program-grid");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+
+      function renderPrograms(programs) {
+        if (!programGrid) return;
+
+        if (programs.length === 0) {
+          programGrid.innerHTML = `<p class="text-zinc-500 text-sm col-span-full text-center">Tidak ada program ditemukan.</p>`;
+          return;
+        }
+
+        programGrid.innerHTML = programs.map(p => `
+          <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-brand-400/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="h-48 overflow-hidden relative">
+                <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-4 right-4 bg-zinc-950/80 backdrop-blur-md text-brand-400 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full border border-zinc-800">
+                  ${p.level}
+                </span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-zinc-500 mb-2">
+                  <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${p.duration}</span>
+                  <span class="flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5"></i> ${p.trainer}</span>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">${p.title}</h3>
+                <p class="text-zinc-400 text-xs leading-relaxed">${p.description}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <button class="w-full bg-zinc-950 border border-zinc-800 hover:border-brand-400 hover:text-brand-400 text-zinc-300 font-semibold text-xs py-2.5 rounded-xl transition-all">
+                Ikuti Kelas
+              </button>
+            </div>
+          </div>
+        `).join("");
+
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      // Initial Render
+      renderPrograms(mockPrograms);
+
+      // Filter Event Listeners
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => {
+            b.classList.remove("active", "bg-brand-400", "text-zinc-950");
+            b.classList.add("bg-zinc-900", "text-zinc-300");
+          });
+
+          btn.classList.add("active", "bg-brand-400", "text-zinc-950");
+          btn.classList.remove("bg-zinc-900", "text-zinc-300");
+
+          const category = btn.dataset.category;
+          if (category === "all") {
+            renderPrograms(mockPrograms);
+          } else {
+            const filtered = mockPrograms.filter(p => p.category === category);
+            renderPrograms(filtered);
+          }
+        });
+      });
+
+      // 3. Interactive BMI Calculator
+      const bmiForm = document.getElementById("bmi-form");
+      const bmiValueEl = document.getElementById("bmi-value");
+      const bmiStatusEl = document.getElementById("bmi-status");
+      const bmiAdviceEl = document.getElementById("bmi-advice");
+
+      if (bmiForm) {
+        bmiForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const heightCm = parseFloat(document.getElementById("height").value);
+          const weightKg = parseFloat(document.getElementById("weight").value);
+
+          if (!heightCm || !weightKg) return;
+
+          const heightM = heightCm / 100;
+          const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+
+          bmiValueEl.innerText = bmi;
+
+          if (bmi < 18.5) {
+            bmiStatusEl.innerText = "Kekurangan Berat Badan";
+            bmiStatusEl.className = "text-lg font-bold text-amber-400";
+            bmiAdviceEl.innerText = "Disarankan mengambil program Strength & Muscle Gain.";
+          } else if (bmi >= 18.5 && bmi <= 24.9) {
+            bmiStatusEl.innerText = "Berat Badan Ideal";
+            bmiStatusEl.className = "text-lg font-bold text-brand-400";
+            bmiAdviceEl.innerText = "Pertahankan kondisi fisikmu dengan program gabungan Cardio & Functional.";
+          } else if (bmi >= 25 && bmi <= 29.9) {
+            bmiStatusEl.innerText = "Kelebihan Berat Badan";
+            bmiStatusEl.className = "text-lg font-bold text-orange-400";
+            bmiAdviceEl.innerText = "Disarankan mengambil program HIIT & Cardio Fat Burn.";
+          } else {
+            bmiStatusEl.innerText = "Obesitas";
+            bmiStatusEl.className = "text-lg font-bold text-red-400";
+            bmiAdviceEl.innerText = "Konsultasikan dengan Personal Trainer untuk pendampingan intensif.";
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
