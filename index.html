@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FitZone Fitness Center - Train stronger, live better.">
+  <title>FitZone — Fitness Center</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            fit: {
+              lime: '#b7f34a',
+              dark: '#090b0d',
+              card: '#111519'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-fit-dark text-white font-sans">
+  <!-- HEADER / NAV -->
+  <header class="site-header fixed top-0 left-0 right-0 z-50">
+    <nav class="mx-auto max-w-7xl px-5 lg:px-8 h-20 flex items-center justify-between" aria-label="Navigasi utama">
+      <a href="#home" class="logo flex items-center gap-2" aria-label="FitZone Home">
+        <span class="logo-mark">F</span>
+        <span>FIT<span>ZONE</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#trainers" class="nav-link">Trainers</a>
+        <a href="#schedule" class="nav-link">Schedule</a>
+        <a href="#membership" class="nav-link">Membership</a>
+        <a href="#bmi" class="nav-link">BMI</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <a href="#join" class="hidden sm:inline-flex btn-primary px-5 py-3 rounded-full text-sm font-bold">
+        Join Now <span>↗</span>
+      </a>
+
+      <button id="menuBtn" class="md:hidden menu-btn" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden px-5 pb-5">
+      <a href="#programs">Programs</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#membership">Membership</a>
+      <a href="#bmi">BMI Calculator</a>
+      <a href="#faq">FAQ</a>
+      <a href="#join" class="text-fit-lime font-bold">Join Now →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero min-h-screen relative overflow-hidden flex items-center">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-watermark">FIT</div>
+
+      <div class="mx-auto max-w-7xl w-full px-5 lg:px-8 pt-28 pb-16 relative z-10">
+        <div class="max-w-3xl">
+          <p class="eyebrow reveal">FITNESS • PERFORMANCE • COMMUNITY</p>
+          <h1 class="hero-title reveal delay-1">
+            Train hard.<br>
+            <span>Live stronger.</span>
+          </h1>
+          <p class="hero-copy reveal delay-2">
+            Upgrade your body, mindset, and everyday performance with premium equipment,
+            expert trainers, and programs built for every level.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-9 reveal delay-3">
+            <a href="#join" class="btn-primary px-7 py-4 rounded-full font-bold inline-flex items-center gap-2">
+              Join Now <span>↗</span>
+            </a>
+            <a href="#programs" class="btn-outline px-7 py-4 rounded-full font-bold">
+              Explore Programs
+            </a>
+          </div>
+
+          <div class="hero-stats mt-14 flex flex-wrap gap-8">
+            <div><strong>2.5K+</strong><span>Active Members</span></div>
+            <div><strong>6</strong><span>Expert Trainers</span></div>
+            <div><strong>40+</strong><span>Weekly Classes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card hidden lg:block">
+        <div class="hero-card-image">
+          <img src="https://unsplash.com/photos/portrait-of-young-gym-athlete-doing-exercise-with-a-barbell-gym-sport-and-healthy-lifestyle-concept-SKIlTo3wj2M" alt="Athlete training with weights">
+        </div>
+        <div class="hero-card-info">
+          <span>MEMBER OF THE MONTH</span>
+          <strong>Build your best self.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section-padding">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PROGRAMS</p>
+            <h2>Find your <span>challenge.</span></h2>
+          </div>
+          <p class="section-description">Six focused programs designed to help you move better, get stronger, and stay consistent.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+          <article class="program-card lift-card">
+            <div class="card-number">01</div>
+            <div class="program-icon">◒</div>
+            <h3>Strength Lab</h3>
+            <p>Progressive strength training for power, muscle, and confidence.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="program-card lift-card featured-program">
+            <div class="card-number">02</div>
+            <div class="program-icon">⚡</div>
+            <h3>HIIT Burn</h3>
+            <p>Fast-paced intervals that challenge your cardio and full-body endurance.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="program-card lift-card">
+            <div class="card-number">03</div>
+            <div class="program-icon">✦</div>
+            <h3>Yoga Flow</h3>
+            <p>Mobility, balance, breathing, and recovery in one calming session.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="program-card lift-card">
+            <div class="card-number">04</div>
+            <div class="program-icon">◉</div>
+            <h3>Boxing Fit</h3>
+            <p>Learn fundamentals while improving coordination, stamina, and agility.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="program-card lift-card">
+            <div class="card-number">05</div>
+            <div class="program-icon">↯</div>
+            <h3>Functional</h3>
+            <p>Practical movement patterns to make everyday performance stronger.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="program-card lift-card">
+            <div class="card-number">06</div>
+            <div class="program-icon">♢</div>
+            <h3>Personal Training</h3>
+            <p>One-on-one coaching with a plan tailored to your personal goals.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINERS -->
+    <section id="trainers" class="section-padding bg-panel">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TRAINERS</p>
+            <h2>Train with the <span>best.</span></h2>
+          </div>
+          <p class="section-description">Meet the coaches who will keep you accountable, motivated, and moving forward.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=85" alt="Trainer Alex">
+            <div class="trainer-overlay">
+              <div><span>STRENGTH</span><h3>Alex Morgan</h3><p>Mon • Wed • Fri</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=85" alt="Trainer Ryan">
+            <div class="trainer-overlay">
+              <div><span>HIIT & CARDIO</span><h3>Ryan Cole</h3><p>Tue • Thu • Sat</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=85" alt="Trainer Maya">
+            <div class="trainer-overlay">
+              <div><span>YOGA & MOBILITY</span><h3>Maya Chen</h3><p>Mon • Tue • Thu</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=85" alt="Trainer Jordan">
+            <div class="trainer-overlay">
+              <div><span>BOXING</span><h3>Jordan Blake</h3><p>Wed • Fri • Sat</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=85" alt="Trainer Sofia">
+            <div class="trainer-overlay">
+              <div><span>FUNCTIONAL</span><h3>Sofia Reyes</h3><p>Mon • Wed • Sat</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=85" alt="Trainer Ethan">
+            <div class="trainer-overlay">
+              <div><span>PERSONAL TRAINING</span><h3>Ethan Brooks</h3><p>Tue • Thu • Fri</p></div>
+              <span class="trainer-arrow">↗</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="section-padding">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SCHEDULE</p>
+            <h2>Pick a day. <span>Show up.</span></h2>
+          </div>
+          <p class="section-description">Filter the weekly class schedule and find your next session.</p>
+        </div>
+
+        <div class="day-filter mt-10" role="group" aria-label="Filter jadwal berdasarkan hari">
+          <button class="day-btn active" data-day="Monday">Mon</button>
+          <button class="day-btn" data-day="Tuesday">Tue</button>
+          <button class="day-btn" data-day="Wednesday">Wed</button>
+          <button class="day-btn" data-day="Thursday">Thu</button>
+          <button class="day-btn" data-day="Friday">Fri</button>
+          <button class="day-btn" data-day="Saturday">Sat</button>
+        </div>
+
+        <div id="scheduleList" class="schedule-list mt-6"></div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership" class="section-padding bg-panel">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="eyebrow">MEMBERSHIP</p>
+          <h2 class="section-title-center">Choose your <span>level.</span></h2>
+          <p class="section-description mx-auto">Simple plans. Serious results. Upgrade or downgrade whenever your goals change.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-5 mt-12">
+          <article class="price-card">
+            <p class="plan-tag">BASIC</p>
+            <h3>Starter</h3>
+            <div class="price">Rp199K <small>/ month</small></div>
+            <p class="price-copy">Everything you need to build a consistent gym routine.</p>
+            <ul>
+              <li>✓ Gym access</li>
+              <li>✓ Locker & shower</li>
+              <li>✓ Basic fitness assessment</li>
+              <li>✓ 5% merchandise discount</li>
+            </ul>
+            <a href="#join" class="btn-outline w-full text-center py-3 rounded-full font-bold mt-8 block">Choose Basic</a>
+          </article>
+
+          <article class="price-card popular">
+            <div class="popular-label">MOST POPULAR</div>
+            <p class="plan-tag">PREMIUM</p>
+            <h3>Performance</h3>
+            <div class="price">Rp349K <small>/ month</small></div>
+            <p class="price-copy">More coaching, more classes, and more ways to improve.</p>
+            <ul>
+              <li>✓ Everything in Basic</li>
+              <li>✓ Unlimited group classes</li>
+              <li>✓ Monthly PT session</li>
+              <li>✓ Body composition check</li>
+              <li>✓ 10% merchandise discount</li>
+            </ul>
+            <a href="#join" class="btn-primary w-full text-center py-3 rounded-full font-bold mt-8 block">Choose Premium</a>
+          </article>
+
+          <article class="price-card">
+            <p class="plan-tag">VIP</p>
+            <h3>Elite</h3>
+            <div class="price">Rp599K <small>/ month</small></div>
+            <p class="price-copy">The complete FitZone experience for serious personal goals.</p>
+            <ul>
+              <li>✓ Everything in Premium</li>
+              <li>✓ 4 PT sessions / month</li>
+              <li>✓ Nutrition consultation</li>
+              <li>✓ VIP recovery area</li>
+              <li>✓ 20% merchandise discount</li>
+            </ul>
+            <a href="#join" class="btn-outline w-full text-center py-3 rounded-full font-bold mt-8 block">Choose VIP</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI -->
+    <section id="bmi" class="section-padding">
+      <div class="max-w-5xl mx-auto px-5 lg:px-8">
+        <div class="bmi-box grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="eyebrow">BMI CHECK</p>
+            <h2>Know your <span>starting point.</span></h2>
+            <p class="text-gray-400 mt-4 leading-7">Calculate your Body Mass Index using your weight and height. Use the result as a general reference, not a medical diagnosis.</p>
+            <div class="bmi-form mt-8">
+              <label for="weight">Weight (kg)</label>
+              <input id="weight" type="number" min="1" step="0.1" placeholder="e.g. 60">
+              <label for="height">Height (cm)</label>
+              <input id="height" type="number" min="1" step="0.1" placeholder="e.g. 165">
+              <button id="bmiBtn" class="btn-primary w-full py-3.5 rounded-xl font-bold mt-3">Calculate BMI</button>
+            </div>
+          </div>
+
+          <div class="bmi-result" id="bmiResult">
+            <div class="bmi-circle"><span id="bmiValue">--</span></div>
+            <p id="bmiCategory">Enter your data to calculate.</p>
+            <small id="bmiMessage">Your result will appear here.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN FORM -->
+    <section id="join" class="section-padding bg-panel">
+      <div class="max-w-5xl mx-auto px-5 lg:px-8">
+        <div class="join-grid">
+          <div class="join-copy">
+            <p class="eyebrow">JOIN FITZONE</p>
+            <h2>Your stronger self starts <span>today.</span></h2>
+            <p>Fill in the form and our team will contact you with membership details and your first visit schedule.</p>
+            <div class="join-points">
+              <span>✓ Free first consultation</span>
+              <span>✓ No hidden fees</span>
+              <span>✓ Beginner-friendly community</span>
+            </div>
+          </div>
+
+          <form id="joinForm" class="join-form" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Your name">
+                <small class="error" id="nameError"></small>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com">
+                <small class="error" id="emailError"></small>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label for="plan">Membership Plan</label>
+              <select id="plan" name="plan">
+                <option value="">Select a plan</option>
+                <option value="Basic">Basic — Rp199K/month</option>
+                <option value="Premium">Premium — Rp349K/month</option>
+                <option value="VIP">VIP — Rp599K/month</option>
+              </select>
+              <small class="error" id="planError"></small>
+            </div>
+
+            <div class="mt-4">
+              <label for="goal">Fitness Goal</label>
+              <textarea id="goal" name="goal" rows="3" placeholder="Tell us your goal..."></textarea>
+              <small class="error" id="goalError"></small>
+            </div>
+
+            <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold mt-5">Submit Membership</button>
+            <p id="formSuccess" class="success-message" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding">
+      <div class="max-w-4xl mx-auto px-5 lg:px-8">
+        <div class="text-center">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title-center">Questions? <span>Answered.</span></h2>
+        </div>
+
+        <div class="faq-list mt-10">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can beginners join FitZone?</span><span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer"><p>Absolutely. Our programs are designed for different fitness levels, and our trainers can help you choose a safe starting point.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I join group classes with Basic membership?</span><span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer"><p>Basic members get gym access and can upgrade to Premium or VIP when they want unlimited group classes and additional coaching.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do I need to bring my own equipment?</span><span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer"><p>No. FitZone provides the standard training equipment. Just bring comfortable workout clothes, shoes, and a water bottle.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I book a trainer?</span><span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer"><p>Contact the front desk or submit the membership form above. Our team will help match you with a trainer based on your goals and schedule.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <a href="#home" class="logo flex items-center gap-2">
+            <span class="logo-mark">F</span><span>FIT<span>ZONE</span></span>
+          </a>
+          <p class="footer-copy">A modern fitness community built for people who want to train with purpose and live with energy.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#programs">Programs</a>
+          <a href="#trainers">Trainers</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#membership">Membership</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>fitzone@example.com</p>
+          <p>+62 812 3456 7890</p>
+          <p>Medan, Indonesia</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FitZone Fitness Center</span>
+        <span>Train smart. Stay strong.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
